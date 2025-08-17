@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: archon-bot
+    env: python
+    plan: starter
+    region: frankfurt   # или ближайший к твоей ЦА
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: PROVIDER_TOKEN
+        sync: false
+      - key: WHITE_CHAT_ID
+        sync: false
+      - key: BLACK_CHAT_ID
+        sync: false
+      - key: GREY_CHAT_ID
+        sync: false
